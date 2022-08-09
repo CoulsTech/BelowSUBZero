@@ -1,23 +1,28 @@
-# SUBZero (Secure USB Backup Zero) <br /> 
-This is the main repository for the SUBZero, a Raspberry Pi Zero Wireless USB NAS.  Credit for the python https server skeleton code goes to [Rich Moulton](https://github.com/rhmoult/SecurityTools/blob/master/Platform_Independent/Python/httpsWithUpload/src/httpsWithUpload.py). Get the 3D Printed Case [here](https://www.thingiverse.com/thing:3389059)
-
-[![3D Printed Case](/Pictures/SUBZero5.jpg)](https://www.thingiverse.com/thing:3389059)
+# BelowSUBZero (Beyond Secure USB Backup Zero) <br /> 
+Credit for the original Github Repo that this is based off of by [Halcy0nic] (https://github.com/Halcy0nic/SUBZero)
+Credit for the python https server skeleton code goes to [Rich Moulton](https://github.com/rhmoult/SecurityTools/blob/master/Platform_Independent/Python/httpsWithUpload/src/httpsWithUpload.py).
+Get the 3D Printed Case [here](https://www.thingiverse.com/thing:3389059)
 
 ## What You Need
 * Raspberry Pi Zero W
 * Micro SD card (minimum 16GB to use prebuilt image)
-* Pi Zero USB Stem (Optional)
-* Soldering Station (Optional)
-* 3D Printer (Optional)
+* Pi Zero USB under board USB-A adapter (Optional)
+*   -Ref. https://www.amazon.com/MakerFocus-Raspberry-Required-Provide-Connector/dp/B077W69CD1
+* Waveshare Pi Zero Battery HAT or Equivalent + Battery
+*   -Ref. https://www.waveshare.com/li-ion-battery-hat.htm
 
 ## How it Works
-Just plug in the SUBZero to a USB port and it will broadcast a WiFi network named SUBZero (the default password is raspberry for WiFi, and pi:raspberry for the OS.  PLEASE change this once it's up and running).  Once connected to the network, you can browse to https://192.168.1.1 and start uploading/sharing files. This functions as a standalone network, meaning *no Internet connection required!*.
+Just turn on power to the Pi Zero or plug it in to an adequate power source and it will broadcast a WiFi network named BelowSUBZero (the default password is raspberry for WiFi, and pi:raspberry for the OS. PLEASE change this once it's up and running). Once connected to the network, you can browse to https://192.168.1.1 and start uploading/sharing files. This functions as a standalone network, meaning *no Internet connection required!*.
 
 ## Installation
 
 #### Flashing the Raspberry Pi Zero W with the SUBZero Image
 
-The easiest way to get up and running with the SUBZero is by grabbing [SUBZero.tar.bz2](https://github.com/Halcy0nic/SUBZero/releases/tag/1v12) image, untaring it, and flashing it onto an SD card.  I recommend using [Etcher](https://www.balena.io/etcher/) for flashing the SD card.  Etcher is easy to use and works on Windows, OSX, and Linux.
+The easiest way to get up and running with the SUBZero is by grabbing [SUBZero.tar.bz2]
+***##UPDATE THIS##***(https://github.com/Halcy0nic/SUBZero/releases/tag/1v12) 
+image, untaring it, and flashing it onto an SD card.  I recommend using [Etcher](https://www.balena.io/etcher/) or Raspberry Pi imager
+***##ADD LINK##***
+(Includes a user/pass changing option!) for flashing the SD card.  Etcher is easy to use and works on Windows, OSX, and Linux.
 
 #### Installing from source
 
@@ -34,22 +39,24 @@ After you reboot we will go ahead and get the device ready to download and insta
 Afterwards, tgit so install the SUBZero on your Raspberry Pi Zero W, clone the SUBZero repository from my [GitHub](https://github.com/Halcy0nic/SUBZero) and run the install script.
 
 ``` 
-$ git clone https://github.com/Halcy0nic/SUBZero.git
-$ cd ./SUBZero
+$ git clone https://github.com/CoulsTech/BelowSUBZero.git
+$ cd ./BelowSUBZero
 $ sudo chmod +x install.sh && sudo ./install.sh
 ```
-During the installation, you will be prompted to enter data for the self-signed certificate. You can simply enter a '.' or dummy data for all of the fields when generating the cert.  Once you have installed the SUBZero, reboot the machine and you should see a WiFi Access Point named 'SUBZero' that you can connect to with the password 'raspberry'.  Once connected to the SUBZero wireless network you can browse to https://192.168.1.1 and start uploading files.
+During the installation, you will be prompted to enter data for the self-signed certificate.
+
+***##INTENDED TO BE MODIFIED AND GUIDED##***
+
+You can simply enter a '.' or dummy data for all of the fields when generating the cert.  Once you have installed the SUBZero, reboot the machine and you should see a WiFi Access Point named 'SUBZero' that you can connect to with the password 'raspberry'.  Once connected to the SUBZero wireless network you can browse to https://192.168.1.1 and start uploading files.
 
 
 <br />NOTE: Your browser might complain about the cert being invalid (because it's self-signed).  Proceed to the webpage anyway and add an exception if necessary.
 
-## PI Zero USB Stem
+## PI Zero USB Board
+
+***##UPDATE THIS##***
 
 According to [Zerostem](https://zerostem.io), the Pi 'Zero Stem is a PCB shim that turns a Raspberry Pi Zero into a USB dongle. Once the shim is installed, your Raspberry Pi can be plugged directly into a computer or USB hub without any additional cables or power supplies.'  This is much more convenient than using a USB adapter, which would normally be required for a Pi Zero.  Installing the Zero Stem will require some soldering experience however.  Once you have a Pi and Zero Stem you can turn it into a USB by soldering the STEM onto the Pi Zero using their [instructions](https://zerostem.io/installation/).
-
-
-## 3D printed case
-Lots of thanks go to Nick Engmann for this one.  He developed the [3D printed SUBZero Case](https://www.thingiverse.com/thing:3389059).  Nick actively contributes to the SUBZero project and has some amazing projects of his own on his [website](https://nickengmann.com), so go check him out!
 
 
 ## Routing
